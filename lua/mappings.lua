@@ -1,7 +1,6 @@
 local map = vim.keymap.set
 
-
-map("n", ";", ":", { desc = "CMD enter command mode" })
+-- map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 
 map("n", "<C-q>", ":NvimTreeFocus<CR>")
@@ -13,7 +12,6 @@ map("n","<C-e>",":Telescope find_files<CR>")
 
 map("","<Tab>",":BufferLineCycleNext<CR>")
 map("","<S-Tab>",":BufferLineCyclePrev<CR>")
-map("","<C-F>",":Neoformat<CR>")
 
 map("n","<A-j>",":m +1<CR>")
 map("n","<A-k>",":m -2<CR>")

@@ -33,6 +33,7 @@ return {
             sources = cmp.config.sources({
                 { name = "nvim_lsp"},
                 { name = "path" }, -- file system paths
+                -- { name = "buffer"}
             }),
         })
     end
