@@ -13,7 +13,7 @@ return {
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
 		local keymap = vim.keymap -- for conciseness
-
+		local util = require("lspconfig/util")
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 			callback = function(ev)
@@ -99,6 +99,17 @@ return {
 
 		lspconfig["gopls"].setup({
 			capabilities = capabilities,
+			filetypes = { "go", "gomod", "gowork", "gotmpl" },
+			root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+			settings = {
+				gopls = {
+					completeUnimported = true,
+					usePlaceholders = true,
+					analyses = {
+						unusedparams = true,
+					},
+				},
+			},
 		})
 		lspconfig["lua_ls"].setup({
 			capabilities = capabilities,
