@@ -97,6 +97,10 @@ return {
 			capabilities = capabilities,
 		})
 
+		-- lspconfig["sqls"].setup({
+		-- 	capabilities = capabilities,
+		-- })
+
 		lspconfig["gopls"].setup({
 			capabilities = capabilities,
 			filetypes = { "go", "gomod", "gowork", "gotmpl" },
