@@ -15,4 +15,4 @@ map("", "<S-Tab>", ":BufferLineCyclePrev<CR>")
 
 map("n", "<A-j>", ":m +1<CR>")
 map("n", "<A-k>", ":m -2<CR>")
-map("n", "<C-W>", ":bd")
+map("n", "<C-W>", ":bd<CR>")
