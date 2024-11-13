@@ -27,6 +27,8 @@ return {
 				"pyright",
 				"ts_ls",
 				"gopls",
+				"html",
+				"intelephense",
 			},
 			automatic_installation = true,
 		})
