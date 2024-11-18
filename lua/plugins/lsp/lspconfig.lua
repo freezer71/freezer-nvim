@@ -111,8 +111,15 @@ return {
 				},
 			},
 		})
-		lspconfig["rust_analyzer"].setup({})
-		lspconfig["jdtls"].setup({})
+		lspconfig["rust_analyzer"].setup({
+			capabilities = capabilities,
+		})
+		lspconfig["jdtls"].setup({
+			capabilities = capabilities,
+		})
+		lspconfig["prismals"].setup({
+			capabilities = capabilities,
+		})
 		lspconfig["lua_ls"].setup({
 			capabilities = capabilities,
 			settings = {

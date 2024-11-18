@@ -29,6 +29,7 @@ return {
 				"gopls",
 				"rust_analyzer",
 				"jdtls",
+				"prismals",
 			},
 			automatic_installation = true,
 		})
