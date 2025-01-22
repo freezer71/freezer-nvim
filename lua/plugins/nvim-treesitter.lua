@@ -2,13 +2,9 @@ return {
   "nvim-treesitter/nvim-treesitter",
   config = function()
     require("nvim-treesitter.configs").setup({
-
-      ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline" },
-
+      ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "php", "prisma", "sql" },
       sync_install = false,
-
       auto_install = true,
-      ignore_install = { "javascript" },
       highlight = {
         enable = true,
         disable = { "c", "rust" },
