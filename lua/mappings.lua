@@ -2,9 +2,9 @@ local map = vim.keymap.set
 
 map("i", "jk", "<ESC>")
 
-map("n", "<C-q>", ":NvimTreeFocus<CR>")
 map("n", "<C-b>", ":NvimTreeToggle<CR>")
 
+map("n", "<C-q>", ":NvimTreeFocus<CR>")
 map("t", "<ESC>", "<C-\\><C-n>")
 
 map("n", "<C-e>", ":Telescope find_files<CR>")
@@ -17,3 +17,5 @@ map("", "<A-w>", ":%bd<CR>")
 map("n", "<A-j>", ":m +1<CR>")
 map("n", "<A-k>", ":m -2<CR>")
 map("n", "<C-W>", ":bd<CR>")
+map('n', '<A-i>', '<CMD>lua require("FTerm").toggle()<CR>')
+map('t', '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')

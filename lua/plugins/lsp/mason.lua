@@ -29,7 +29,10 @@ return {
         "gopls",
         "rust_analyzer",
         "jdtls",
+        "clangd",
+        "intelephense"
       },
+
       automatic_installation = true,
     })
   end,
