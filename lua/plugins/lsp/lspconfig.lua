@@ -93,6 +93,9 @@ return {
 			capabilities = capabilities,
 		})
 
+		lspconfig["jinja_lsp"].setup({
+			capabilities = capabilities,
+		})
 		lspconfig["tailwindcss"].setup({
 			capabilities = capabilities,
 		})
