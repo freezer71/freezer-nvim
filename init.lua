@@ -1,11 +1,18 @@
+vim.o.shell = "pwsh.exe"
+vim.o.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
+
+vim.o.shellquote = ""
+vim.o.shellxquote = ""
+
 require("configs.lazy")
 require("mappings")
 
+-- vim.o.shellredir = "2>&1 | Out-File -Encoding UTF8 %s"
+-- vim.o.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s"
 vim.o.tabstop = 2 -- A TAB character looks like 4 spaces
 vim.o.expandtab = true -- Pressing the TAB key will insert spaces instead of a TAB character
 vim.o.softtabstop = 2 -- Number of spaces inserted instead of a TAB character
 vim.o.shiftwidth = 2 -- Number of spaces inserted when indenting
-vim.o.shell = "powershell.exe"
 vim.wo.relativenumber = true
 vim.wo.number = true
 vim.opt.clipboard:append({ "unnamed", "unnamedplus" })
