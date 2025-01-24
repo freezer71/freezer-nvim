@@ -1,9 +1,6 @@
 local map = vim.keymap.set
 
 map("i", "jk", "<ESC>")
--- floating terminal
-map("", "<A-i>", ":ToggleTerm direction=float<CR>")
-
 map("n", "<C-b>", ":NvimTreeToggle<CR>")
 
 map("n", "<C-q>", ":NvimTreeFocus<CR>")
@@ -19,3 +16,5 @@ map("", "<A-w>", ":%bd<CR>")
 map("n", "<A-j>", ":m +1<CR>")
 map("n", "<A-k>", ":m -2<CR>")
 map("n", "<C-W>", ":bd<CR>")
+
+map('n', 'dd', '"_dd', { noremap = true })

@@ -140,5 +140,9 @@ return {
         },
       },
     })
+
+    lspconfig["jdtls"].setup({
+      capabilities = capabilities,
+    })
   end,
 }
