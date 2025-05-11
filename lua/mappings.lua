@@ -1,9 +1,9 @@
 local map = vim.keymap.set
 
 map("i", "jk", "<ESC>")
-map("n", "<C-b>", ":NvimTreeToggle<CR>")
+map("n", "<C-q>", ":NvimTreeToggle<CR>")
+map("n", "<C-b>", ":NvimTreeFocus<CR>")
 
-map("n", "<C-q>", ":NvimTreeFocus<CR>")
 map("t", "<ESC>", "<C-\\><C-n>")
 
 map("n", "<C-e>", ":Telescope find_files<CR>")
@@ -12,11 +12,14 @@ map("n", "<c-f>", ":Telescope live_grep<CR>")
 map("", "<Tab>", ":BufferLineCycleNext<CR>")
 map("", "<S-Tab>", ":BufferLineCyclePrev<CR>")
 map("", "<A-w>", ":%bd<CR>")
-map("", "<C-Z>", ":undo<CR>")
-map("", "<C-Y>", ":redo<CR>")
+map("", "<C-z>", ":undo<CR>")
+map("", "<C-z>", ":redo<CR>")
+
+map("", "<C-s>", ":vsplit<CR>:TmuxNavigateLeft<CR>")
+map("", "<A-s>", ":split<CR>:TmuxNavigateLeft<CR>")
 
 map("n", "<A-j>", ":m +1<CR>")
 map("n", "<A-k>", ":m -2<CR>")
-map("n", "<C-W>", ":bd<CR>")
+map("n", "<C-W>", ":close<CR>")
 
 map('n', 'dd', '"_dd', { noremap = true })
