@@ -13,7 +13,7 @@ map("", "<Tab>", ":BufferLineCycleNext<CR>")
 map("", "<S-Tab>", ":BufferLineCyclePrev<CR>")
 map("", "<A-w>", ":%bd<CR>")
 map("", "<C-z>", ":undo<CR>")
-map("", "<C-z>", ":redo<CR>")
+map("", "<C-y>", ":redo<CR>")
 
 map("", "<C-s>", ":vsplit<CR>:TmuxNavigateLeft<CR>")
 map("", "<A-s>", ":split<CR>:TmuxNavigateLeft<CR>")

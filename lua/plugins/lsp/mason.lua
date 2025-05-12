@@ -28,8 +28,7 @@ return {
 				"ts_ls",
 				"gopls",
 				"rust_analyzer",
-				"jdtls",
-				"jinja_lsp",
+
 			},
 			automatic_installation = true,
 		})
