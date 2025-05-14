@@ -16,21 +16,19 @@ return {
 				},
 			},
 		})
-		mason_lspconfig.setup({
-			ensure_installed = {
-				"html",
-				"cssls",
-				"tailwindcss",
-				"lua_ls",
-				"emmet_ls",
-				"prismals",
-				"pyright",
-				"ts_ls",
-				"gopls",
-				"rust_analyzer",
-
-			},
-			automatic_installation = true,
-		})
+mason_lspconfig.setup({
+  ensure_installed = {
+    "html",
+    "cssls",
+    "tailwindcss",
+    "lua_ls",
+    "emmet_ls",
+    "pyright",
+    "tsserver", -- au lieu de "ts_ls"
+    "gopls",
+    "rust_analyzer",
+  },
+  automatic_installation = true,
+})
 	end,
 }
