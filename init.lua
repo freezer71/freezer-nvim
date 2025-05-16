@@ -1,4 +1,4 @@
-vim.o.shell = "pwsh.exe"
+-- vim.o.shell = "pwsh.exe"
 vim.o.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
 
 vim.o.shellquote = ""
@@ -6,6 +6,7 @@ vim.o.shellxquote = ""
 
 require("configs.lazy")
 require("mappings")
+require("snippets")
 
 vim.o.tabstop = 2      -- A TAB character looks like 4 spaces
 vim.o.expandtab = true -- Pressing the TAB key will insert spaces instead of a TAB character

@@ -2,7 +2,7 @@ local map = vim.keymap.set
 
 map("i", "jk", "<ESC>")
 map("n", "<C-q>", ":NvimTreeToggle<CR>")
-map("n", "<C-b>", ":NvimTreeFocus<CR>")
+map("n", "<C-a>", ":NvimTreeFocus<CR>")
 
 map("t", "<ESC>", "<C-\\><C-n>")
 
@@ -20,6 +20,9 @@ map("", "<A-s>", ":split<CR>:TmuxNavigateLeft<CR>")
 
 map("n", "<A-j>", ":m +1<CR>")
 map("n", "<A-k>", ":m -2<CR>")
-map("n", "<C-W>", ":close<CR>")
+map("n", "<c-w>", ":close<cr>")
 
 map('n', 'dd', '"_dd', { noremap = true })
+
+-- map("i", "<log>", ":close<cr>")
+
