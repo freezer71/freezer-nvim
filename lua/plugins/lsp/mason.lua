@@ -26,6 +26,7 @@ mason_lspconfig.setup({
     "pyright",
     "tsserver", -- au lieu de "ts_ls"
     "gopls",
+    "python",
     "rust_analyzer",
   },
   automatic_installation = true,

@@ -21,6 +21,8 @@ map("", "<A-s>", ":split<CR>:TmuxNavigateLeft<CR>")
 map("n", "<A-j>", ":m +1<CR>")
 map("n", "<A-k>", ":m -2<CR>")
 map("n", "<c-w>", ":close<cr>")
+map("", "<C-z>", ":undo<CR>")
+map("", "<A-a>", "ggVG")
 
 map('n', 'dd', '"_dd', { noremap = true })
 

@@ -77,6 +77,10 @@ return {
       capabilities = capabilities,
     })
 
+    lspconfig["python"].setup({
+      capabilities = capabilities,
+    })
+
     lspconfig["dartls"].setup({
       capabilities = capabilities,
     })
