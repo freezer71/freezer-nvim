@@ -1,5 +1,5 @@
-vim.o.shell = "pwsh.exe"
-vim.o.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
+vim.o.shell = "fish"
+-- vim.o.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
 
 vim.o.shellquote = ""
 vim.o.shellxquote = ""
