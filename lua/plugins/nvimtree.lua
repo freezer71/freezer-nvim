@@ -12,7 +12,7 @@ return {
     vim.g.loaded_netrwPlugin = 1
 
     nvimtree.setup({
-          filters = { dotfiles = false },
+          filters = { dotfiles = false,git_ignored = false },
           disable_netrw = true,
           hijack_cursor = true,
           sync_root_with_cwd = true,
