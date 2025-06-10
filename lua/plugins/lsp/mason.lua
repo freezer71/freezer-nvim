@@ -1,7 +1,7 @@
 return {
-	"williamboman/mason.nvim",
+	"mason-org/mason.nvim",
 	dependencies = {
-		"williamboman/mason-lspconfig.nvim",
+		"mason-org/mason-lspconfig.nvim",
 	},
 	config = function()
 		local mason = require("mason")
@@ -16,20 +16,16 @@ return {
 				},
 			},
 		})
-mason_lspconfig.setup({
-  ensure_installed = {
-    "html",
-    "cssls",
-    "tailwindcss",
-    "lua_ls",
-    "emmet_ls",
-    "pyright",
-    "tsserver", -- au lieu de "ts_ls"
-    "gopls",
-    "python",
-    "rust_analyzer",
-  },
-  automatic_installation = true,
-})
+    mason_lspconfig.setup({
+        automatic_enable = {
+          "cssls",
+          "tailwindcss",
+          "lua_ls",
+          "emmet_ls",
+          "pyright",
+          "gopls",
+          "typescript", "html", "typescriptreact", "typescript.tsx"
+        }
+    })
 	end,
 }

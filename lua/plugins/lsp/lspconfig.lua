@@ -119,9 +119,9 @@ return {
         },
       },
     })
-    lspconfig["rust_analyzer"].setup({
-      capabilities = capabilities,
-    })
+    -- lspconfig["rust_analyzer"].setup({
+    --   capabilities = capabilities,
+    -- })
     lspconfig["prismals"].setup({
       capabilities = capabilities,
     })
