@@ -5,7 +5,10 @@ return {
     opts = {
       servers = {
         pyright = {},
-        tsserver = {},
+        tsserver = {
+          filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+          root_dir = require("lspconfig.util").root_pattern("package.json", "tsconfig.json", ".git"),
+        },
         lua_ls = {
           settings = {
             Lua = {
@@ -15,7 +18,6 @@ return {
           },
         },
         gopls = {
-          -- Configuration optionnelle pour Go
           settings = {
             gopls = {
               analyses = {
