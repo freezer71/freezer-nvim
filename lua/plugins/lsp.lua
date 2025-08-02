@@ -6,6 +6,7 @@ return {
       servers = {
         pyright = {},
         dartls = {},
+        prismals = {},
         tsserver = {
           filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
           root_dir = require("lspconfig.util").root_pattern("package.json", "tsconfig.json", ".git"),
