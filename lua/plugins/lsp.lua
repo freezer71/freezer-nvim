@@ -7,8 +7,22 @@ return {
         pyright = {},
         dartls = {},
         prismals = {},
+        html = {
+          filetypes = { "html", "htmldjango" }, -- tu peux adapter si besoin
+          init_options = {
+            provideFormatter = true, -- active le formateur intégré
+          },
+        },
+        tailwindcss = {},
         tsserver = {
-          filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+          filetypes = {
+            "javascript",
+            "javascriptreact",
+            "javascript.jsx",
+            "typescript",
+            "typescriptreact",
+            "typescript.tsx",
+          },
           root_dir = require("lspconfig.util").root_pattern("package.json", "tsconfig.json", ".git"),
         },
         lua_ls = {
@@ -28,6 +42,14 @@ return {
               },
               staticcheck = true,
             },
+          },
+        },
+        cssls = {
+          filetypes = { "css", "scss", "less" },
+          settings = {
+            css = { validate = true },
+            scss = { validate = true },
+            less = { validate = true },
           },
         },
       },
