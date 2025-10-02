@@ -5,5 +5,13 @@ return {
     "nvim-lua/plenary.nvim",
     "stevearc/dressing.nvim", -- optional for vim.ui.select
   },
-  config = true,
+  config = function()
+    local map = vim.keymap.set
+    map("n", "fR", "<cmd> FlutterRun <cr>")
+    map("n", "fe", "<cmd> FlutterEmulators<cr>")
+    map("n", "fr", "<cmd> FlutterRestart <cr>")
+    map("n", "fo", "<cmd> FlutterOutlineToggle <cr>")
+
+    require("flutter-tools").setup({})
+  end,
 }
