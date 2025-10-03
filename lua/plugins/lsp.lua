@@ -52,6 +52,21 @@ return {
             less = { validate = true },
           },
         },
+
+        intelephense = {
+          filetypes = { "php" },
+          -- root_dir = require("lspconfig.util").root_pattern("composer.json", ".git"),
+          settings = {
+            intelephense = {
+              files = {
+                maxSize = 5000000, -- autorise fichiers jusqu’à ~5Mo
+              },
+              diagnostics = {
+                enable = true,
+              },
+            },
+          },
+        },
       },
     },
   },

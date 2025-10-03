@@ -3,5 +3,5 @@ return {
   lazy = false,
   build = "npm i -g live-server",
   cmd = { "LiveServerStart", "LiveServerStop" },
-  config = function() end,
+  config = true,
 }
