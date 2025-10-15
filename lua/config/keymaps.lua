@@ -10,4 +10,4 @@ function Map(mode, lhs, rhs, opts)
   vim.keymap.set(mode, lhs, rhs, options)
 end
 
-Map("n", "<C-a>", "ggVG") -- Select all
+Map("n", "<C-a>", "ggVG")

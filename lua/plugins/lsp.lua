@@ -8,13 +8,14 @@ return {
         dartls = {},
         prismals = {},
         html = {
-          filetypes = { "html", "htmldjango" }, -- tu peux adapter si besoin
+          filetypes = { "html", "htmldjango" },
           init_options = {
-            provideFormatter = true, -- active le formateur intégré
+            provideFormatter = true,
           },
         },
         tailwindcss = {},
-        tsserver = {
+        ts_ls = {
+          cmd = { "typescript-language-server", "--stdio" },
           filetypes = {
             "javascript",
             "javascriptreact",
@@ -23,9 +24,9 @@ return {
             "typescriptreact",
             "typescript.tsx",
           },
-          root_dir = require("lspconfig.util").root_pattern("package.json", "tsconfig.json", ".git"),
         },
         lua_ls = {
+          filetypes = "lua",
           settings = {
             Lua = {
               diagnostics = { globals = { "vim" } },
@@ -34,6 +35,7 @@ return {
           },
         },
         gopls = {
+          filetypes = { "go" },
           settings = {
             gopls = {
               analyses = {
@@ -52,17 +54,32 @@ return {
             less = { validate = true },
           },
         },
-
         intelephense = {
           filetypes = { "php" },
           -- root_dir = require("lspconfig.util").root_pattern("composer.json", ".git"),
           settings = {
             intelephense = {
               files = {
-                maxSize = 5000000, -- autorise fichiers jusqu’à ~5Mo
+                maxSize = 5000000,
               },
               diagnostics = {
                 enable = true,
+              },
+            },
+          },
+        },
+        jdtls = {
+          filetypes = { "java" },
+          settings = {
+            java = {
+              configuration = {
+                runtimes = {
+                  {
+                    name = "JavaSE-25",
+                    path = "/usr/lib/jvm/default/",
+                    default = true,
+                  },
+                },
               },
             },
           },
