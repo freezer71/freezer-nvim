@@ -11,6 +11,7 @@ return {
     map("n", "fe", "<cmd> FlutterEmulators<cr>")
     map("n", "fr", "<cmd> FlutterRestart <cr>")
     map("n", "fo", "<cmd> FlutterOutlineToggle <cr>")
+    map("n", "fl", "<cmd> FlutterLogToggle <cr>")
 
     require("flutter-tools").setup({})
   end,
