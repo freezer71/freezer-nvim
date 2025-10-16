@@ -116,6 +116,7 @@ return {
                 "xml",
                 "zip",
                 "zlib",
+                "mongodb"
               },
             },
           },
