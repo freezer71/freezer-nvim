@@ -43,8 +43,7 @@ return {
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-      local on_attach = function(_, bufnr)
-      end
+      local on_attach = function(_, bufnr) end
 
       local servers = {
         lua_ls = {
@@ -58,9 +57,9 @@ return {
           },
         },
         tsserver = {}, -- TypeScript / JavaScript
-        pyright = {},  -- Python
-        cssls = {},    -- CSS
-        html = {       -- HTML avec CSS/JS intégré
+        pyright = {}, -- Python
+        cssls = {}, -- CSS
+        html = { -- HTML avec CSS/JS intégré
           filetypes = { "html", "htmldjango" },
           settings = {
             html = {
@@ -74,10 +73,10 @@ return {
             },
           },
         },
-        jsonls = {},      -- JSON
-        dartls = {},      -- Dart / Flutter
+        jsonls = {}, -- JSON
+        dartls = {}, -- Dart / Flutter
         tailwindcss = {}, -- TailwindCSS
-        gopls = {},       -- Go
+        gopls = {}, -- Go
         -- jdtls= {
         --   -- filetypes = { "java" },
         -- },
@@ -116,7 +115,7 @@ return {
                 "xml",
                 "zip",
                 "zlib",
-                "mongodb"
+                "mongodb",
               },
             },
           },
@@ -133,10 +132,12 @@ return {
       local map = vim.keymap.set
 
       local function on_list(options)
-        vim.fn.setqflist({}, ' ', options)
+        vim.fn.setqflist({}, " ", options)
         vim.cmd.cfirst()
       end
-      map("n", "gd", function () vim.lsp.buf.definition({on_list = on_list}) end, { desc = "Go to definition", unpack(opts) })
+      map("n", "gd", function()
+        vim.lsp.buf.definition({ on_list = on_list })
+      end, { desc = "Go to definition", unpack(opts) })
       map("n", "K", vim.lsp.buf.hover, { desc = "Show documentation", unpack(opts) })
       map("n", "gr", vim.lsp.buf.references, { desc = "List references", unpack(opts) })
       map("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename symbol", unpack(opts) })
