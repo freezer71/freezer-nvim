@@ -1,6 +1,6 @@
 {
   "create-equitable-entity": {
-    "prefix": "createEquitableEntity",
+    "prefix": "fee",
     "body":[
       "import 'package:equitable/equitable.dart';",
       "class ${1:EntityName} extends Equitable {",

@@ -23,9 +23,10 @@ return {
       settings = {
         java = {},
       },
-      init_options = {
-        bundles = {},
-      },
+      -- init_options = {
+      --   bundles = {},
+      -- },
+
     })
   end,
 }
