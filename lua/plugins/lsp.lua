@@ -1,6 +1,4 @@
--- Configuration complète LSP avec Mason
 return {
-  -- Mason : gestion des serveurs
   {
     "mason-org/mason.nvim",
     config = function()
@@ -8,7 +6,6 @@ return {
     end,
   },
 
-  -- Mason-LSPConfig : pont Mason <-> LSP
   {
     "mason-org/mason-lspconfig.nvim",
     dependencies = { "mason-org/mason.nvim", "neovim/nvim-lspconfig" },
@@ -21,10 +18,9 @@ return {
           "cssls",
           "html",
           "jsonls",
-          -- "dartls",
           "tailwindcss",
-          "gopls",
           "intelephense",
+          "jdtls",
         },
 
         automatic_installation = true,
@@ -43,7 +39,7 @@ return {
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-      local on_attach = function(_, bufnr) end
+      local on_attach = function(_, _) end
 
       local servers = {
         lua_ls = {
@@ -57,9 +53,9 @@ return {
           },
         },
         tsserver = {}, -- TypeScript / JavaScript
-        pyright = {}, -- Python
-        cssls = {}, -- CSS
-        html = { -- HTML avec CSS/JS intégré
+        pyright = {},  -- Python
+        cssls = {},    -- CSS
+        html = {       -- HTML avec CSS/JS intégré
           filetypes = { "html", "htmldjango" },
           settings = {
             html = {
@@ -73,12 +69,12 @@ return {
             },
           },
         },
-        jsonls = {}, -- JSON
-        dartls = {}, -- Dart / Flutter
+        jsonls = {},      -- JSON
+        dartls = {},      -- Dart / Flutter
         tailwindcss = {}, -- TailwindCSS
-        gopls = {}, -- Go
+        -- gopls = {}, -- Go
         -- jdtls= {
-        --   -- filetypes = { "java" },
+        --   filetypes = { "java" },
         -- },
         intelephense = { -- PHP
           filetypes = { "php", "htmldjango" },
@@ -135,6 +131,7 @@ return {
         vim.fn.setqflist({}, " ", options)
         vim.cmd.cfirst()
       end
+
       map("n", "gd", function()
         vim.lsp.buf.definition({ on_list = on_list })
       end, { desc = "Go to definition", unpack(opts) })

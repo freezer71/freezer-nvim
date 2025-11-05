@@ -2,10 +2,10 @@
   "create-equitable-entity": {
     "prefix": "fee",
     "body":[
-      "import 'package:equitable/equitable.dart';",
-      "class ${1:EntityName} extends Equitable {",
+      "import 'package:equatable/equatable.dart';",
+      "class ${1:EntityName} extends Equatable {",
       " ${1:EntityName}();",
-      " @overide",
+      " @override",
       " List<Object?> get props => [];",
       "}"
     ]
