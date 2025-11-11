@@ -1,0 +1,11 @@
+{
+  "dd": {
+    "prefix": "ndd",
+    "body": [
+      "echo \"<pre>\";",
+      "var_dump($1);",
+      "echo \"</pre>\";"
+    ],
+    "description": "Dump function in PHP"
+  }
+}

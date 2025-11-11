@@ -1,7 +1,4 @@
--- Configuration complète LSP avec Mason
 return {
-  {},
-  -- Mason : gestion des serveurs
   {
     "mason-org/mason.nvim",
     config = function()
@@ -9,7 +6,6 @@ return {
     end,
   },
 
-  -- Mason-LSPConfig : pont Mason <-> LSP
   {
     "mason-org/mason-lspconfig.nvim",
     dependencies = { "mason-org/mason.nvim", "neovim/nvim-lspconfig" },
@@ -24,6 +20,7 @@ return {
           "jsonls",
           "tailwindcss",
           "intelephense",
+          "jdtls",
         },
 
         automatic_installation = true,
@@ -56,9 +53,9 @@ return {
           },
         },
         tsserver = {}, -- TypeScript / JavaScript
-        pyright = {}, -- Python
-        cssls = {}, -- CSS
-        html = { -- HTML avec CSS/JS intégré
+        pyright = {},  -- Python
+        cssls = {},    -- CSS
+        html = {       -- HTML avec CSS/JS intégré
           filetypes = { "html", "htmldjango" },
           settings = {
             html = {
@@ -72,12 +69,12 @@ return {
             },
           },
         },
-        jsonls = {}, -- JSON
-        dartls = {}, -- Dart / Flutter
+        jsonls = {},      -- JSON
+        dartls = {},      -- Dart / Flutter
         tailwindcss = {}, -- TailwindCSS
         gopls = {}, -- Go
         -- jdtls= {
-        --   -- filetypes = { "java" },
+        --   filetypes = { "java" },
         -- },
         intelephense = { -- PHP
           filetypes = { "php", "htmldjango" },
