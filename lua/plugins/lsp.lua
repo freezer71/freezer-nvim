@@ -75,7 +75,7 @@ return {
         jsonls = {}, -- JSON
         dartls = {}, -- Dart / Flutter
         tailwindcss = {}, -- TailwindCSS
-        -- gopls = {}, -- Go
+        gopls = {}, -- Go
         -- jdtls= {
         --   -- filetypes = { "java" },
         -- },
@@ -130,16 +130,18 @@ return {
       local opts = { noremap = true, silent = true }
       local map = vim.keymap.set
 
-      local function on_list(options)
-        vim.fn.setqflist({}, " ", options)
-        vim.cmd.cfirst()
-      end
+      -- local function on_list(options)
+      --   vim.fn.setqflist({}, " ", options)
+      --   vim.cmd.cfirst()
+      -- end
+      local snacks = require("snacks")
 
-      map("n", "gd", function()
-        vim.lsp.buf.definition({ on_list = on_list })
-      end, { desc = "Go to definition", unpack(opts) })
       map("n", "K", vim.lsp.buf.hover, { desc = "Show documentation", unpack(opts) })
-      map("n", "gr", vim.lsp.buf.references, { desc = "List references", unpack(opts) })
+
+      map("n", "gd", snacks.picker.lsp_declarations, { desc = "Go to definition", unpack(opts) })
+      map("n", "gr", snacks.picker.lsp_references, { desc = "List references", unpack(opts) })
+      map("n", "gi", snacks.picker.lsp_implementations, { desc = "List implementation", unpack(opts) })
+
       map("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename symbol", unpack(opts) })
       map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action", unpack(opts) })
       map("n", "<leader>f", function()
