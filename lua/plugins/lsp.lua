@@ -135,7 +135,7 @@ return {
 
       map("n", "K", vim.lsp.buf.hover, { desc = "Show documentation", unpack(opts) })
 
-      map("n", "gd", snacks.picker.lsp_declarations, { desc = "Go to definition", unpack(opts) })
+      map("n", "gd", snacks.picker.lsp_definitions, { desc = "Go to definition", unpack(opts) })
       map("n", "gr", snacks.picker.lsp_references, { desc = "List references", unpack(opts) })
       map("n", "gi", snacks.picker.lsp_implementations, { desc = "List implementation", unpack(opts) })
 
