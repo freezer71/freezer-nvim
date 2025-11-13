@@ -2,10 +2,32 @@
   "name": "personal-snippets",
   "contributes": {
     "snippets": [
-      { "language": ["typescriptreact", "javascriptreact"], "path": "./react.json" },
-      { "language": "json", "path": "./java.json" },
-      { "language":"dart", "path":"./flutter.json" },
-      { "language": "php", "path": "./php.json" }
+      {
+        "language": [
+          "typescriptreact",
+          "javascriptreact"
+        ],
+        "path": "./react.json"
+      },
+      {
+        "language": "json",
+        "path": "./java.json"
+      },
+      {
+        "language": "dart",
+        "path": "./flutter.json"
+      },
+      {
+        "language": "php",
+        "path": "./php.json"
+      },
+      {
+        "language": [
+          "javascript",
+          "typescript"
+        ],
+        "path": "./typescript.json"
+      }
     ]
   }
 }

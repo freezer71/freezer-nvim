@@ -1,0 +1,11 @@
+{
+  "arrow-function": {
+    "prefix": "afn",
+    "description": "Create an arrow function",
+    "body": [
+      "(${1:params}) => {",
+      "  ${2:// body}",
+      "};"
+    ]
+  }
+}

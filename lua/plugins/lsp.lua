@@ -5,7 +5,21 @@ return {
       require("mason").setup()
     end,
   },
-
+  -- {
+  --   "nvim-treesitter/nvim-treesitter",
+  --   config = function()
+  --     require("nvim-treesitter.config").setup({
+  --       ensure_installed = {
+  --         "prisma"
+  --       },
+  --       sync_install = false,
+  --       auto_install = true,
+  --       highlight = {
+  --         enable = true,
+  --       },
+  --     })
+  --   end,
+  -- },
   {
     "mason-org/mason-lspconfig.nvim",
     dependencies = { "mason-org/mason.nvim", "neovim/nvim-lspconfig" },
@@ -21,6 +35,7 @@ return {
           "tailwindcss",
           "intelephense",
           "jdtls",
+          "prismals",
         },
 
         automatic_installation = true,
@@ -72,7 +87,8 @@ return {
         jsonls = {},      -- JSON
         dartls = {},      -- Dart / Flutter
         tailwindcss = {}, -- TailwindCSS
-        gopls = {}, -- Go
+        gopls = {},       -- Go
+        prismals = {},    -- Prisma
         -- jdtls= {
         --   filetypes = { "java" },
         -- },
