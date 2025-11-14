@@ -68,10 +68,10 @@ return {
           },
         },
         tsserver = {}, -- TypeScript / JavaScript
-        pyright = {},  -- Python
-        cssls = {},    -- CSS
-        html = {       -- HTML avec CSS/JS intégré
-          filetypes = { "html", "htmldjango" },
+        pyright = {}, -- Python
+        cssls = {}, -- CSS
+        html = { -- HTML avec CSS/JS intégré
+          filetypes = { "html", "htmldjango", "ejs" },
           settings = {
             html = {
               format = { enable = true },
@@ -84,11 +84,12 @@ return {
             },
           },
         },
-        jsonls = {},      -- JSON
-        dartls = {},      -- Dart / Flutter
+        jsonls = {}, -- JSON
+        dartls = {}, -- Dart / Flutter
         tailwindcss = {}, -- TailwindCSS
-        gopls = {},       -- Go
-        prismals = {},    -- Prisma
+        gopls = {}, -- Go
+        prismals = {}, -- Prisma
+        htmlx = {},
         -- jdtls= {
         --   filetypes = { "java" },
         -- },
