@@ -1,0 +1,17 @@
+{
+  "create-class": {
+    "prefix": "class",
+    "description": "Create a Java class",
+    "body": [
+      "public class ${1:ClassName} {",
+      "    ",
+      "    public ${1:ClassName}() {",
+      "        ${2:// constructor body}",
+      "    }",
+      "    ",
+      "    ${3:// methods}",
+      "}"
+    ]
+
+  }
+}
