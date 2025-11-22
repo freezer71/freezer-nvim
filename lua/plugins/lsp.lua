@@ -36,6 +36,7 @@ return {
           "intelephense",
           "jdtls",
           "prismals",
+          "gopls",
         },
 
         automatic_installation = true,
@@ -85,11 +86,11 @@ return {
           },
         },
         jsonls = {}, -- JSON
-        dartls = {}, -- Dart / Flutter
+        -- dartls = {}, -- Dart / Flutter
         tailwindcss = {}, -- TailwindCSS
         gopls = {}, -- Go
         prismals = {}, -- Prisma
-        htmlx = {},
+        -- htmlx = {},
         -- jdtls= {
         --   filetypes = { "java" },
         -- },
