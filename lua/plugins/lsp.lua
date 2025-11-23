@@ -5,21 +5,12 @@ return {
       require("mason").setup()
     end,
   },
-  -- {
-  --   "nvim-treesitter/nvim-treesitter",
-  --   config = function()
-  --     require("nvim-treesitter.config").setup({
-  --       ensure_installed = {
-  --         "prisma"
-  --       },
-  --       sync_install = false,
-  --       auto_install = true,
-  --       highlight = {
-  --         enable = true,
-  --       },
-  --     })
-  --   end,
-  -- },
+  {
+    "olrtg/nvim-emmet",
+    config = function()
+      vim.keymap.set({ "n", "v" }, '<leader>xe', require('nvim-emmet').wrap_with_abbreviation)
+    end,
+  },
   {
     "mason-org/mason-lspconfig.nvim",
     dependencies = { "mason-org/mason.nvim", "neovim/nvim-lspconfig" },
@@ -37,6 +28,7 @@ return {
           "jdtls",
           "prismals",
           "gopls",
+          "emmet-language-server"
         },
 
         automatic_installation = true,
@@ -69,9 +61,9 @@ return {
           },
         },
         tsserver = {}, -- TypeScript / JavaScript
-        pyright = {}, -- Python
-        cssls = {}, -- CSS
-        html = { -- HTML avec CSS/JS intégré
+        pyright = {},  -- Python
+        cssls = {},    -- CSS
+        html = {       -- HTML avec CSS/JS intégré
           filetypes = { "html", "htmldjango", "ejs" },
           settings = {
             html = {
@@ -85,11 +77,11 @@ return {
             },
           },
         },
-        jsonls = {}, -- JSON
+        jsonls = {},      -- JSON
         -- dartls = {}, -- Dart / Flutter
         tailwindcss = {}, -- TailwindCSS
-        gopls = {}, -- Go
-        prismals = {}, -- Prisma
+        gopls = {},       -- Go
+        prismals = {},    -- Prisma
         -- htmlx = {},
         -- jdtls= {
         --   filetypes = { "java" },

@@ -11,4 +11,4 @@ function Map(mode, lhs, rhs, opts)
 end
 
 Map("n", "<C-a>", "ggVG")
-Map("", "<leader>ff", Snacks.picker.files)
+Map("", "<leader><leader>", Snacks.picker.files)
