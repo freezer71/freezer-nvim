@@ -27,8 +27,7 @@ return {
           "intelephense",
           "jdtls",
           "prismals",
-          "gopls",
-          "emmet-language-server"
+          "emmet_language_server"
         },
 
         automatic_installation = true,
@@ -151,6 +150,7 @@ return {
 
       map("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename symbol", unpack(opts) })
       map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action", unpack(opts) })
+
       map("n", "<leader>f", function()
         vim.lsp.buf.format({ async = true })
       end, { desc = "Format code", unpack(opts) })

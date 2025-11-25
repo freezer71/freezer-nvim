@@ -14,8 +14,7 @@ return {
     map("n", "fl", "<cmd> FlutterLogToggle <cr>")
 
     require("flutter-tools").setup({
-      -- fvm = "/Users/tharsan/fvm/",
-      -- flutter_path = "/Users/tharsan/fvm/versions/3.29.2/bin/flutter",
-    })
+      -- flutter_path = "/Users/tharsan/fvm/versions/stable/bin/flutter",
+    });
   end,
 }
