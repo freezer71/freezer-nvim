@@ -8,7 +8,7 @@ return {
   {
     "olrtg/nvim-emmet",
     config = function()
-      vim.keymap.set({ "n", "v" }, '<leader>xe', require('nvim-emmet').wrap_with_abbreviation)
+      vim.keymap.set({ "n", "v" }, "<leader>xe", require("nvim-emmet").wrap_with_abbreviation)
     end,
   },
   {
@@ -27,9 +27,9 @@ return {
           "intelephense",
           "jdtls",
           "prismals",
-          "emmet_language_server"
+          "emmet_language_server",
+          "svelte",
         },
-
         automatic_installation = true,
       })
     end,
@@ -59,10 +59,21 @@ return {
             },
           },
         },
-        tsserver = {}, -- TypeScript / JavaScript
-        pyright = {},  -- Python
-        cssls = {},    -- CSS
-        html = {       -- HTML avec CSS/JS intégré
+        tsserver = {
+          filetypes = {
+            "typescript",
+            "typescriptreact",
+            "javascript",
+            "javascriptreact",
+            "html",
+            "htmldjango",
+            "ejs",
+            "svelte",
+          },
+        }, -- TypeScript / JavaScript
+        pyright = {}, -- Python
+        cssls = {}, -- CSS
+        html = { -- HTML avec CSS/JS intégré
           filetypes = { "html", "htmldjango", "ejs" },
           settings = {
             html = {
@@ -76,11 +87,12 @@ return {
             },
           },
         },
-        jsonls = {},      -- JSON
+        jsonls = {}, -- JSON
         -- dartls = {}, -- Dart / Flutter
         tailwindcss = {}, -- TailwindCSS
-        gopls = {},       -- Go
-        prismals = {},    -- Prisma
+        gopls = {}, -- Go
+        prismals = {}, -- Prisma
+        svelte = {}, -- Svelte
         -- htmlx = {},
         -- jdtls= {
         --   filetypes = { "java" },
