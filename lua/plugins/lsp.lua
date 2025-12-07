@@ -17,6 +17,7 @@ return {
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = {
+          "gopls",
           "lua_ls",
           "ts_ls",
           "pyright",
@@ -25,12 +26,13 @@ return {
           "jsonls",
           "tailwindcss",
           "intelephense",
-          "jdtls",
           "prismals",
           "emmet_language_server",
           "svelte",
         },
         automatic_installation = true,
+
+        automatic_enable = false,
       })
     end,
   },
@@ -70,10 +72,10 @@ return {
             "ejs",
             "svelte",
           },
-        }, -- TypeScript / JavaScript
+        },            -- TypeScript / JavaScript
         pyright = {}, -- Python
-        cssls = {}, -- CSS
-        html = { -- HTML avec CSS/JS intégré
+        cssls = {},   -- CSS
+        html = {      -- HTML avec CSS/JS intégré
           filetypes = { "html", "htmldjango", "ejs" },
           settings = {
             html = {
@@ -87,12 +89,12 @@ return {
             },
           },
         },
-        jsonls = {}, -- JSON
+        jsonls = {},      -- JSON
         -- dartls = {}, -- Dart / Flutter
         tailwindcss = {}, -- TailwindCSS
-        gopls = {}, -- Go
-        prismals = {}, -- Prisma
-        svelte = {}, -- Svelte
+        gopls = {},       -- Go
+        prismals = {},    -- Prisma
+        svelte = {},      -- Svelte
         -- htmlx = {},
         -- jdtls= {
         --   filetypes = { "java" },
