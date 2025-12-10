@@ -12,3 +12,15 @@ end
 
 Map("n", "<C-a>", "ggVG")
 Map("", "<leader><leader>", Snacks.picker.files)
+
+-- NORMAL MODE: déplacer une ligne
+Map("n", "<A-Down>", ":m .+1<CR>==", { desc = "Move line down" })
+Map("n", "<A-Up>", ":m .-2<CR>==", { desc = "Move line up" })
+Map("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line down" })
+Map("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up" })
+
+-- VISUAL MODE: déplacer un bloc
+Map("v", "<A-Down>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
+Map("v", "<A-Up>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
+Map("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
+Map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
