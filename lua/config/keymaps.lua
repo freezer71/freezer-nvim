@@ -11,7 +11,7 @@ function Map(mode, lhs, rhs, opts)
 end
 
 Map("n", "<C-a>", "ggVG")
-Map("", "<leader><leader>", Snacks.picker.files)
+Map("", "<leader><leader>", Snacks.picker.files,{desc = "Open file picker"})
 
 -- NORMAL MODE: déplacer une ligne
 Map("n", "<A-Down>", ":m .+1<CR>==", { desc = "Move line down" })
