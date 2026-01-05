@@ -24,3 +24,8 @@ Map("v", "<A-Down>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
 Map("v", "<A-Up>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 Map("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
 Map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
+
+-- Terminal mode: exit terminal mode
+Map("t", "<Esc>", "<C-\\><C-n>")
+Map("", "<A-t>", "<cmd>FloatermToggle<cr>", { desc = "Toggle Floaterm" })
+Map("t", "<A-t>", "<cmd>FloatermToggle<cr>", { desc = "Toggle Floaterm" })

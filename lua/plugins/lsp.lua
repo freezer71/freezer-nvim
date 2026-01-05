@@ -29,6 +29,7 @@ return {
           "prismals",
           "emmet_language_server",
           "svelte",
+          "twiggy_language_server",
         },
         automatic_installation = true,
 
@@ -70,12 +71,11 @@ return {
             "html",
             "htmldjango",
             "ejs",
-            "svelte",
           },
-        },            -- TypeScript / JavaScript
+        }, -- TypeScript / JavaScript
         pyright = {}, -- Python
-        cssls = {},   -- CSS
-        html = {      -- HTML avec CSS/JS intégré
+        cssls = {}, -- CSS
+        html = { -- HTML avec CSS/JS intégré
           filetypes = { "html", "htmldjango", "ejs" },
           settings = {
             html = {
@@ -89,12 +89,13 @@ return {
             },
           },
         },
-        jsonls = {},      -- JSON
+        twiggy_language_server = {},
+        jsonls = {}, -- JSON
         -- dartls = {}, -- Dart / Flutter
         tailwindcss = {}, -- TailwindCSS
-        gopls = {},       -- Go
-        prismals = {},    -- Prisma
-        svelte = {},      -- Svelte
+        gopls = {}, -- Go
+        prismals = {}, -- Prisma
+        svelte = {}, -- Svelte
         -- htmlx = {},
         -- jdtls= {
         --   filetypes = { "java" },
