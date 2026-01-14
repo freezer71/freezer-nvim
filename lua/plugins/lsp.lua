@@ -72,10 +72,10 @@ return {
             "htmldjango",
             "ejs",
           },
-        }, -- TypeScript / JavaScript
+        },            -- TypeScript / JavaScript
         pyright = {}, -- Python
-        cssls = {}, -- CSS
-        html = { -- HTML avec CSS/JS intégré
+        cssls = {},   -- CSS
+        html = {      -- HTML avec CSS/JS intégré
           filetypes = { "html", "htmldjango", "ejs" },
           settings = {
             html = {
@@ -90,12 +90,12 @@ return {
           },
         },
         twiggy_language_server = {},
-        jsonls = {}, -- JSON
+        jsonls = {},      -- JSON
         -- dartls = {}, -- Dart / Flutter
         tailwindcss = {}, -- TailwindCSS
-        gopls = {}, -- Go
-        prismals = {}, -- Prisma
-        svelte = {}, -- Svelte
+        gopls = {},       -- Go
+        prismals = {},    -- Prisma
+        svelte = {},      -- Svelte
         -- htmlx = {},
         -- jdtls= {
         --   filetypes = { "java" },
@@ -105,10 +105,14 @@ return {
           root_markers = { ".git", "composer.json" },
           settings = {
             intelephense = {
-              files = { maxSize = 5000000 },
+              environment = {
+                phpVersion = "8.3"
+              },
+              files = { maxSize = 500000 },
               stubs = {
-                "apache",
                 "bcmath",
+                "Core",
+                "superglobals",
                 "curl",
                 "date",
                 "dom",
@@ -119,6 +123,7 @@ return {
                 "iconv",
                 "json",
                 "mbstring",
+                "mongodb",
                 "mysqli",
                 "openssl",
                 "pcre",
@@ -135,7 +140,6 @@ return {
                 "xml",
                 "zip",
                 "zlib",
-                "mongodb",
               },
             },
           },
