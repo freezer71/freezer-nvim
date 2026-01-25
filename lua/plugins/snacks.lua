@@ -5,11 +5,6 @@ return {
   opts = {
     explorer = { enabled = true },
     picker = {
-      exclude = { -- add folder names here to exclude
-        ".git",
-        "node_modules",
-        ".next"
-      },
       enabled = true,
       sources = {
         files = {
