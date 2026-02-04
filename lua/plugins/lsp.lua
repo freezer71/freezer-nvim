@@ -1,5 +1,10 @@
 return {
-  { "mason-org/mason.nvim", config = function() require("mason").setup() end, },
+  {
+    "mason-org/mason.nvim",
+    config = function()
+      require("mason").setup()
+    end,
+  },
   {
     "mason-org/mason-lspconfig.nvim",
     dependencies = { "mason-org/mason.nvim", "neovim/nvim-lspconfig" },
@@ -56,10 +61,10 @@ return {
             "htmldjango",
             "ejs",
           },
-        },            -- TypeScript / JavaScript
+        }, -- TypeScript / JavaScript
         pyright = {}, -- Python
-        cssls = {},   -- CSS
-        html = {      -- HTML avec CSS/JS intégré
+        cssls = {}, -- CSS
+        html = { -- HTML avec CSS/JS intégré
           filetypes = { "html", "htmldjango", "ejs" },
           settings = {
             html = {
@@ -74,12 +79,12 @@ return {
           },
         },
         twiggy_language_server = {},
-        jsonls = {},      -- JSON
+        jsonls = {}, -- JSON
         tailwindcss = {}, -- TailwindCSS
-        gopls = {},       -- Go
-        prismals = {},    -- Prisma
-        svelte = {},      -- Svelte
-        intelephense = {  -- PHP
+        gopls = {}, -- Go
+        prismals = {}, -- Prisma
+        svelte = {}, -- Svelte
+        intelephense = { -- PHP
           filetypes = { "php", "htmldjango" },
           root_markers = { ".git", "composer.json" },
           settings = {
@@ -87,11 +92,36 @@ return {
               environment = { phpVersion = "8.3" },
               files = { maxSize = 500000 },
               stubs = {
-                "bcmath", "Core", "superglobals", "curl", "date", "dom",
-                "fileinfo", "filter", "gd", "hash", "iconv", "json", "mbstring",
-                "mongodb", "mysqli", "openssl", "pcre", "PDO", "phar", "posix",
-                "reflection", "session", "SimpleXML", "sockets", "spl", "standard", "tokenizer", "xml",
-                "zip", "zlib",
+                "bcmath",
+                "Core",
+                "superglobals",
+                "curl",
+                "date",
+                "dom",
+                "fileinfo",
+                "filter",
+                "gd",
+                "hash",
+                "iconv",
+                "json",
+                "mbstring",
+                "mongodb",
+                "mysqli",
+                "openssl",
+                "pcre",
+                "PDO",
+                "phar",
+                "posix",
+                "reflection",
+                "session",
+                "SimpleXML",
+                "sockets",
+                "spl",
+                "standard",
+                "tokenizer",
+                "xml",
+                "zip",
+                "zlib",
               },
             },
           },
