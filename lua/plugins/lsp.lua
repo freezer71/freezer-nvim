@@ -1,21 +1,12 @@
 return {
-  {
-    "mason-org/mason.nvim",
-    config = function()
-      require("mason").setup()
-    end,
-  },
-  {
-    "olrtg/nvim-emmet",
-    config = function()
-      vim.keymap.set({ "n", "v" }, "<leader>xe", require("nvim-emmet").wrap_with_abbreviation)
-    end,
-  },
+  { "mason-org/mason.nvim", config = function() require("mason").setup() end, },
   {
     "mason-org/mason-lspconfig.nvim",
     dependencies = { "mason-org/mason.nvim", "neovim/nvim-lspconfig" },
     config = function()
       require("mason-lspconfig").setup({
+        automatic_installation = true,
+        automatic_enable = false,
         ensure_installed = {
           "gopls",
           "lua_ls",
@@ -31,19 +22,12 @@ return {
           "svelte",
           "twiggy_language_server",
         },
-        automatic_installation = true,
-
-        automatic_enable = false,
       })
     end,
   },
-
   -- nvim-lspconfig : configuration des serveurs
   {
     "neovim/nvim-lspconfig",
-    -- dependencies ={
-    --   "telescopic-plugins/telescope.nvim",
-    -- },
     config = function()
       local lspconfig = require("lspconfig")
       local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -91,55 +75,23 @@ return {
         },
         twiggy_language_server = {},
         jsonls = {},      -- JSON
-        -- dartls = {}, -- Dart / Flutter
         tailwindcss = {}, -- TailwindCSS
         gopls = {},       -- Go
         prismals = {},    -- Prisma
         svelte = {},      -- Svelte
-        -- htmlx = {},
-        -- jdtls= {
-        --   filetypes = { "java" },
-        -- },
-        intelephense = { -- PHP
+        intelephense = {  -- PHP
           filetypes = { "php", "htmldjango" },
           root_markers = { ".git", "composer.json" },
           settings = {
             intelephense = {
-              environment = {
-                phpVersion = "8.3"
-              },
+              environment = { phpVersion = "8.3" },
               files = { maxSize = 500000 },
               stubs = {
-                "bcmath",
-                "Core",
-                "superglobals",
-                "curl",
-                "date",
-                "dom",
-                "fileinfo",
-                "filter",
-                "gd",
-                "hash",
-                "iconv",
-                "json",
-                "mbstring",
-                "mongodb",
-                "mysqli",
-                "openssl",
-                "pcre",
-                "PDO",
-                "phar",
-                "posix",
-                "reflection",
-                "session",
-                "SimpleXML",
-                "sockets",
-                "spl",
-                "standard",
-                "tokenizer",
-                "xml",
-                "zip",
-                "zlib",
+                "bcmath", "Core", "superglobals", "curl", "date", "dom",
+                "fileinfo", "filter", "gd", "hash", "iconv", "json", "mbstring",
+                "mongodb", "mysqli", "openssl", "pcre", "PDO", "phar", "posix",
+                "reflection", "session", "SimpleXML", "sockets", "spl", "standard", "tokenizer", "xml",
+                "zip", "zlib",
               },
             },
           },
@@ -155,21 +107,14 @@ return {
       local opts = { noremap = true, silent = true }
       local map = vim.keymap.set
 
-      -- local function on_list(options)
-      --   vim.fn.setqflist({}, " ", options)
-      --   vim.cmd.cfirst()
-      -- end
       local snacks = require("snacks")
 
       map("n", "K", vim.lsp.buf.hover, { desc = "Show documentation", unpack(opts) })
-
       map("n", "gd", snacks.picker.lsp_definitions, { desc = "Go to definition", unpack(opts) })
       map("n", "gr", snacks.picker.lsp_references, { desc = "List references", unpack(opts) })
       map("n", "gi", snacks.picker.lsp_implementations, { desc = "List implementation", unpack(opts) })
-
       map("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename symbol", unpack(opts) })
       map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action", unpack(opts) })
-
       map("n", "<leader>f", function()
         vim.lsp.buf.format({ async = true })
       end, { desc = "Format code", unpack(opts) })

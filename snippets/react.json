@@ -2,9 +2,10 @@
   "react-components": {
     "prefix": "rsc",
     "body": [
-      "export default function ${1:name}() {",
-      " return <div>${2:content}</div>;",
+      "export default function ${1:${TM_FILENAME_BASE/(^|[-_])(\\w)/${2:/upcase}/g}}() {",
+      "  return <${2:div}>${0:content}</$2>;",
       "}"
-    ]
+    ],
+    "description": "React Functional Component based on filename"
   }
 }
