@@ -11,7 +11,7 @@ function Map(mode, lhs, rhs, opts)
 end
 
 Map("n", "<C-a>", "ggVG")
-Map("", "<leader><leader>", Snacks.picker.files,{desc = "Open file picker"})
+Map("", "<leader><leader>", Snacks.picker.files, { desc = "Open file picker" })
 
 -- NORMAL MODE: déplacer une ligne
 Map("n", "<A-Down>", ":m .+1<CR>==", { desc = "Move line down" })
@@ -29,3 +29,6 @@ Map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 -- Map("t", "<Esc>", "<C-\\><C-n>")
 Map("", "<A-ù>", "<cmd>FloatermToggle<cr>", { desc = "Toggle Floaterm" })
 Map("t", "<A-ù>", "<cmd>FloatermToggle<cr>", { desc = "Toggle Floaterm" })
+
+Map("n", "<leader>gp", "<cmd>PhpActor<CR>", { desc = "Phpactor menu" })
+Map("n", "<leader>ga", "<cmd>PhpActor generate_accessor<CR>", { desc = "Generate getter/setter" })
