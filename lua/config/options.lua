@@ -7,4 +7,7 @@
 vim.diagnostic.config({
   virtual_text = false, -- désactive le texte en ligne classique
   virtual_lines = true, -- active les virtual lines sous la ligne
-})
+});
+
+vim.o.timeoutlen = 300
+vim.o.ttimeoutlen = 10
