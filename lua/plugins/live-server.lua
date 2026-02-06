@@ -9,7 +9,7 @@ return {
       cmd = { "LiveServerStart", "LiveServerStop" },
     })
     local map = vim.keymap.set
-    map("n", "Ls", "<cmd> LiveServerStart<cr>")
-    map("n", "Ld", "<cmd> LiveServerStop<cr>")
+    map("n", "<leader>ls", "<cmd> LiveServerStart<cr>")
+    map("n", "<leader>lp", "<cmd> LiveServerStop<cr>")
   end,
 }
