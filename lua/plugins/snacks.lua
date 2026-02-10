@@ -10,10 +10,12 @@ return {
         files = {
           hidden = true,
           ignored = true,
+          exclude = { "node_modules", "*.bru" },
         },
         explorer = {
           hidden = true,
           ignored = true,
+          exclude = { "node_modules", "*.bru" },
         },
       },
     },

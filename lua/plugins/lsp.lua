@@ -61,10 +61,10 @@ return {
             "htmldjango",
             "ejs",
           },
-        }, -- TypeScript / JavaScript
+        },            -- TypeScript / JavaScript
         pyright = {}, -- Python
-        cssls = {}, -- CSS
-        html = { -- HTML avec CSS/JS intégré
+        cssls = {},   -- CSS
+        html = {      -- HTML avec CSS/JS intégré
           filetypes = { "html", "htmldjango", "ejs" },
           settings = {
             html = {
@@ -79,12 +79,12 @@ return {
           },
         },
         twiggy_language_server = {},
-        jsonls = {}, -- JSON
+        jsonls = {},      -- JSON
         tailwindcss = {}, -- TailwindCSS
-        gopls = {}, -- Go
-        prismals = {}, -- Prisma
-        svelte = {}, -- Svelte
-        intelephense = { -- PHP
+        gopls = {},       -- Go
+        prismals = {},    -- Prisma
+        svelte = {},      -- Svelte
+        intelephense = {  -- PHP
           filetypes = { "php", "htmldjango" },
           root_markers = { ".git", "composer.json" },
           settings = {
