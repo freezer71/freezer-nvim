@@ -1,5 +1,6 @@
 return {
   "nvim-flutter/flutter-tools.nvim",
+  ft = "dart", -- Charge uniquement sur les fichiers .dart
   lazy = false,
   dependencies = {
     "nvim-lua/plenary.nvim",
@@ -15,6 +16,6 @@ return {
 
     require("flutter-tools").setup({
       -- flutter_path = "/Users/tharsan/fvm/versions/stable/bin/flutter",
-    });
+    })
   end,
 }

@@ -32,4 +32,3 @@ Map("t", "<A-ù>", "<cmd>FloatermToggle<cr>", { desc = "Toggle Floaterm" })
 
 Map("n", "<leader>gp", "<cmd>PhpActor<CR>", { desc = "Phpactor menu" })
 Map("n", "<leader>ga", "<cmd>PhpActor generate_accessor<CR>", { desc = "Generate getter/setter" })
-

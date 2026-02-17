@@ -1,12 +1,15 @@
 return {
   {
     "mason-org/mason.nvim",
+    cmd = "Mason", -- Charge uniquement quand tu tapes :Mason
+    keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
     config = function()
       require("mason").setup()
     end,
   },
   {
     "mason-org/mason-lspconfig.nvim",
+    event = { "BufReadPre", "BufNewFile" }, -- Charge uniquement à l'ouverture d'un fichier
     dependencies = { "mason-org/mason.nvim", "neovim/nvim-lspconfig" },
     config = function()
       require("mason-lspconfig").setup({
@@ -33,6 +36,7 @@ return {
   -- nvim-lspconfig : configuration des serveurs
   {
     "neovim/nvim-lspconfig",
+    event = { "BufReadPre", "BufNewFile" }, -- Charge uniquement à l'ouverture d'un fichier
     config = function()
       local lspconfig = require("lspconfig")
       local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -61,10 +65,10 @@ return {
             "htmldjango",
             "ejs",
           },
-        },            -- TypeScript / JavaScript
+        }, -- TypeScript / JavaScript
         pyright = {}, -- Python
-        cssls = {},   -- CSS
-        html = {      -- HTML avec CSS/JS intégré
+        cssls = {}, -- CSS
+        html = { -- HTML avec CSS/JS intégré
           filetypes = { "html", "htmldjango", "ejs" },
           settings = {
             html = {
@@ -79,12 +83,12 @@ return {
           },
         },
         twiggy_language_server = {},
-        jsonls = {},      -- JSON
+        jsonls = {}, -- JSON
         tailwindcss = {}, -- TailwindCSS
-        gopls = {},       -- Go
-        prismals = {},    -- Prisma
-        svelte = {},      -- Svelte
-        intelephense = {  -- PHP
+        gopls = {}, -- Go
+        prismals = {}, -- Prisma
+        svelte = {}, -- Svelte
+        intelephense = { -- PHP
           filetypes = { "php", "htmldjango" },
           root_markers = { ".git", "composer.json" },
           settings = {
@@ -137,6 +141,8 @@ return {
       local opts = { noremap = true, silent = true }
       local map = vim.keymap.set
 
+      -- Correction: require("snacks") doit être chargé ici ou passé en global,
+      -- mais il est plus sûr de le protéger avec un pcall ou de le charger si nécessaire.
       local snacks = require("snacks")
 
       map("n", "K", vim.lsp.buf.hover, { desc = "Show documentation", unpack(opts) })
