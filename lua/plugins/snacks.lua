@@ -9,13 +9,20 @@ return {
       sources = {
         files = {
           hidden = true,
-          ignored = true,
-          exclude = { "node_modules", "*.bru" },
+          exclude = {
+            "**/node_modules/**",
+            "**/.git/**",
+            "**/.next/**",
+            "**/dist/**",
+            "**/build/**",
+            "**/.turbo/**",
+            "**/.cache/**",
+            "**/coverage/**",
+            "*.bru",
+          },
         },
         explorer = {
           hidden = true,
-          ignored = true,
-          exclude = { "node_modules", "*.bru" },
         },
       },
     },
