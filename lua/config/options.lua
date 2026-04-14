@@ -11,3 +11,6 @@ vim.diagnostic.config({
 
 vim.o.timeoutlen = 300
 vim.o.ttimeoutlen = 10
+
+vim.opt.spell = true
+vim.opt.spelllang = { 'fr', 'en' } -- Pour le français et l'anglais
