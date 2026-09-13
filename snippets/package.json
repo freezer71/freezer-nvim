@@ -10,10 +10,6 @@
         "path": "./react.json"
       },
       {
-        "language": "json",
-        "path": "./java.json"
-      },
-      {
         "language": "dart",
         "path": "./flutter.json"
       },

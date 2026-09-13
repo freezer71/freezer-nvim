@@ -1,21 +1,19 @@
 return {
-  "nvim-flutter/flutter-tools.nvim",
-  ft = "dart", -- Charge uniquement sur les fichiers .dart
-  lazy = false,
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "stevearc/dressing.nvim", -- optional for vim.ui.select
-  },
-  config = function()
-    local map = vim.keymap.set
-    map("n", "fR", "<cmd> FlutterRun <cr>")
-    map("n", "fe", "<cmd> FlutterEmulators<cr>")
-    map("n", "fr", "<cmd> FlutterRestart <cr>")
-    map("n", "fo", "<cmd> FlutterOutlineToggle <cr>")
-    map("n", "fl", "<cmd> FlutterLogToggle <cr>")
-
-    require("flutter-tools").setup({
+  {
+    "nvim-flutter/flutter-tools.nvim",
+    ft = "dart", -- Charge uniquement sur les fichiers .dart
+    dependencies = { "nvim-lua/plenary.nvim" },
+    -- Raccourcis locaux aux buffers dart
+    keys = {
+      { "<leader>FR", "<cmd>FlutterRun<cr>", ft = "dart", desc = "Flutter Run" },
+      { "<leader>Fe", "<cmd>FlutterEmulators<cr>", ft = "dart", desc = "Flutter Emulators" },
+      { "<leader>Fr", "<cmd>FlutterRestart<cr>", ft = "dart", desc = "Flutter Restart" },
+      { "<leader>Fo", "<cmd>FlutterOutlineToggle<cr>", ft = "dart", desc = "Flutter Outline" },
+      { "<leader>Fl", "<cmd>FlutterLogToggle<cr>", ft = "dart", desc = "Flutter Logs" },
+    },
+    opts = {
       -- flutter_path = "/Users/tharsan/fvm/versions/stable/bin/flutter",
-    })
-  end,
+    },
+  },
+  { "folke/which-key.nvim", opts = { spec = { { "<leader>F", group = "flutter" } } } },
 }

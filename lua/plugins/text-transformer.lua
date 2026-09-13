@@ -10,8 +10,8 @@ return {
     { "<leader>Ck", "<cmd>TtKebab<CR>", mode = { "n", "v" }, desc = "To kebab-case" },
     { "<leader>Ct", "<cmd>TtTitle<CR>", mode = { "n", "v" }, desc = "To Title Case" },
   },
-  dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-  config = function()
-    require("text-transform").setup({})
-  end,
+  dependencies = { "nvim-lua/plenary.nvim" },
+  opts = {
+    popup_type = "select", -- popup via snacks au lieu de telescope
+  },
 }

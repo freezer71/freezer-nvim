@@ -2,37 +2,15 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 --
-function Map(mode, lhs, rhs, opts)
-  local options = { noremap = true, silent = true }
-  if opts then
-    options = vim.tbl_extend("force", options, opts)
-  end
-  vim.keymap.set(mode, lhs, rhs, options)
-end
+local map = vim.keymap.set
 
-Map("n", "<C-a>", "ggVG")
-Map("", "<leader><leader>", Snacks.picker.files, { desc = "Open file picker" })
+map("n", "<C-a>", "ggVG", { desc = "Select all" })
 
--- NORMAL MODE: déplacer une ligne
-Map("n", "<A-Down>", ":m .+2<CR>==", { desc = "Move line down" })
-Map("n", "<A-Up>", ":m .-1<CR>==", { desc = "Move line up" })
-Map("n", "<A-j>", ":m .+2<CR>==", { desc = "Move line down" })
-Map("n", "<A-k>", ":m .-1<CR>==", { desc = "Move line up" })
+-- Déplacer une ligne / un bloc avec les flèches (réutilise <A-j>/<A-k> de LazyVim)
+map({ "n", "i", "v" }, "<A-Down>", "<A-j>", { remap = true, desc = "Move Down" })
+map({ "n", "i", "v" }, "<A-Up>", "<A-k>", { remap = true, desc = "Move Up" })
 
--- VISUAL MODE: déplacer un bloc
-Map("v", "<A-Down>", ":m '>+2<CR>gv=gv", { desc = "Move selection down" })
-Map("v", "<A-Up>", ":m '<-1<CR>gv=gv", { desc = "Move selection up" })
-Map("v", "<A-j>", ":m '>+2<CR>gv=gv", { desc = "Move selection down" })
-Map("v", "<A-k>", ":m '<-1<CR>gv=gv", { desc = "Move selection up" })
+map({ "n", "t" }, "<A-ù>", "<cmd>FloatermToggle<cr>", { desc = "Toggle Floaterm" })
 
--- Terminal mode: exit terminal mode
--- Map("t", "<Esc>", "<C-\\><C-n>")
-Map("", "<A-ù>", "<cmd>FloatermToggle<cr>", { desc = "Toggle Floaterm" })
-Map("t", "<A-ù>", "<cmd>FloatermToggle<cr>", { desc = "Toggle Floaterm" })
-
-Map("n", "<leader>gp", "<cmd>PhpActor<CR>", { desc = "Phpactor menu" })
-Map("n", "<leader>ga", "<cmd>PhpActor generate_accessor<CR>", { desc = "Generate getter/setter" })
-
-Map("n", "<C-S-s>", "<cmd>vsplit<CR>", { desc = "Vertical split" })
-Map("n", "<C-S-h>", "<cmd>split<CR>", { desc = "Horizontal split" })
-Map("n", "<C-w>", "<cmd>close<CR>", { desc = "Close window" })
+map("n", "<C-S-s>", "<cmd>vsplit<CR>", { desc = "Vertical split" })
+map("n", "<C-S-h>", "<cmd>split<CR>", { desc = "Horizontal split" })
